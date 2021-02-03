@@ -1,6 +1,6 @@
 # covid-canada-service
 
-This is the service that all requests will go through. This service will then handle them and call other services as needed.
+This is the service that deals with getting the covid data for Canada.
 
 ## Endpoints
 
