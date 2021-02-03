@@ -3,6 +3,7 @@ import rootService from './index'
 import { success, error } from '../../lib/responses'
 
 const getLatest = async (req: Request, res: Response) => {
+  console.log('root getLatest')
   try {
     const data = await rootService.getLatest()
     success(res, data)

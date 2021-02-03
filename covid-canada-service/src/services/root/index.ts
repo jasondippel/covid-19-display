@@ -5,6 +5,7 @@ const COVID_CANADA_API = process.env.COVID_CANADA_API
 
 const getLatest = async () => {
   const yesterday = getYesterday()
+  console.log(`GET ${COVID_CANADA_API}/reports?after=${yesterday}`)
 
   // Could use /summary endpoint, but data is formatted a little differently
   // TODO: add type info

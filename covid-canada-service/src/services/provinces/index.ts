@@ -3,6 +3,8 @@ import fetch from 'node-fetch'
 const COVID_CANADA_API = process.env.COVID_CANADA_API
 
 const getProvinceList = async () => {
+  console.log(`GET ${COVID_CANADA_API}/provinces`)
+
   // TODO: add type info
   return fetch(`${COVID_CANADA_API}/provinces`)
     .then((res) => res.json())
@@ -16,6 +18,8 @@ const getProvinceList = async () => {
 }
 
 const getLatest = async (code?: string) => {
+  console.log(`GET ${COVID_CANADA_API}/summary/split`)
+
   // TODO: add type info
   return fetch(`${COVID_CANADA_API}/summary/split`)
     .then((res) => res.json())
@@ -33,6 +37,8 @@ const getLatest = async (code?: string) => {
 }
 
 const getRegions = async (code: string) => {
+  console.log(`GET ${COVID_CANADA_API}/province/${code}/regions`)
+
   // TODO: add type info
   return fetch(`${COVID_CANADA_API}/province/${code}/regions`)
     .then((res) => res.json())

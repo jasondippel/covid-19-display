@@ -3,6 +3,7 @@ import regionService from './index'
 import { success, error } from '../../lib/responses'
 
 const listRegions = async (req: Request, res: Response) => {
+  console.log('regions listRegions')
   try {
     const data = await regionService.getRegionsList()
     success(res, data)
@@ -12,6 +13,7 @@ const listRegions = async (req: Request, res: Response) => {
 }
 
 const getRegionInfo = async (req: Request, res: Response) => {
+  console.log('regions getRegionInfo')
   try {
     const regionId = req.params.hr_uid
     const data = await regionService.getRegionInfo(regionId)
@@ -22,6 +24,7 @@ const getRegionInfo = async (req: Request, res: Response) => {
 }
 
 const getRegionLatest = async (req: Request, res: Response) => {
+  console.log('regions getRegionLatest')
   try {
     const regionId = req.params.hr_uid
     const data = await regionService.getLatest(regionId)

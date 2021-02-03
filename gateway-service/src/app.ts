@@ -14,7 +14,7 @@ app.use(routes)
 const start = async () => {
   try {
     app.listen(PORT, HOST, () => {
-      console.log(`gateway-service listening on ${HOST}:${PORT}`)
+      console.log(`gateway-service listening on http://${HOST}:${PORT}`)
     })
   } catch (error) {
     console.error('Failed to start server:', error)

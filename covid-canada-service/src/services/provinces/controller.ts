@@ -3,6 +3,8 @@ import provinceService from './index'
 import { success, error } from '../../lib/responses'
 
 const listProvinces = async (req: Request, res: Response) => {
+  console.log('provinces listProvinces')
+
   try {
     const data = await provinceService.getProvinceList()
     success(res, data)
@@ -12,6 +14,8 @@ const listProvinces = async (req: Request, res: Response) => {
 }
 
 const getLatest = async (req: Request, res: Response) => {
+  console.log('provinces getLatest')
+
   try {
     const data = await provinceService.getLatest()
     success(res, data)
@@ -21,6 +25,8 @@ const getLatest = async (req: Request, res: Response) => {
 }
 
 const getLatestByProvince = async (req: Request, res: Response) => {
+  console.log('provinces getLatestByProvince')
+
   try {
     const code = req.params.code
     const data = await provinceService.getLatest(code)
@@ -31,6 +37,8 @@ const getLatestByProvince = async (req: Request, res: Response) => {
 }
 
 const getRegionsByProvince = async (req: Request, res: Response) => {
+  console.log('provinces getRegionsByProvince')
+
   try {
     const code = req.params.code
     const data = await provinceService.getRegions(code)

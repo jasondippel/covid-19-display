@@ -9,7 +9,8 @@
     "build": "tsc",
     "start": "node dist/src/index.js",
     "dev": "tsc -w & nodemon -q --on-change-only -w dist dist/src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-image": "docker build -t covid-canada-node-app ."
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.0",
