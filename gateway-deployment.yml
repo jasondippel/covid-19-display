@@ -1,4 +1,11 @@
 ---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: covid-gateway-node-app-config
+data:
+  COVID_API: "http://covid-canada-service:3001"
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -16,9 +23,9 @@ spec:
       containers:
       - name: covid-gateway-node-app
         image: jasondippel/covid-gateway-node-app:latest
-        env:
-          - name: COVID_API
-            value: "http://covid-canada-service:3001"
+        envFrom:
+          - configMapRef:
+              name: covid-gateway-node-app-config
         resources:
           limits:
             memory: "128Mi"
