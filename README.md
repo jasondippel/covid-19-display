@@ -40,8 +40,8 @@ $ docker push jasondippel/covid-gateway-node-app:latest
 ```
 3. Create the deployments and services
 ```bash
-$ kubectl create -f villains-deployment.yml
-$ kubectl create -f heroes-deployment.yml
+$ kubectl create -f covid-canada-deployment.yml
+$ kubectl create -f gateway-deployment.yml
 ```
 4. Expose external IP to covid-gateway-sevice (required since we're running in Minikube)
 ```bash

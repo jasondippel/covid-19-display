@@ -1,4 +1,11 @@
 ---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: covid-canada-node-app-config
+data:
+  COVID_CANADA_API: "https://api.covid19tracker.ca"
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -16,9 +23,9 @@ spec:
       containers:
       - name: covid-canada-node-app
         image: jasondippel/covid-canada-node-app:latest
-        env:
-          - name: COVID_CANADA_API
-            value: "https://api.covid19tracker.ca"
+        envFrom:
+          - configMapRef:
+              name: covid-canada-node-app-config
         resources:
           limits:
             memory: "128Mi"
